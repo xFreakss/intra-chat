@@ -1,10 +1,11 @@
 window.onload = () => {
-  var chat = document.getElementById('chat');
+
+  var form = document.getElementById('form');
   var login = document.getElementById('username-box');
 
   function username() {
     if (!window.localStorage.getItem('username')) {
-      chat.style.display = 'none';
+      form.style.display = 'none';
       login.style.display = "flex";
     }
   }
@@ -17,10 +18,9 @@ window.onload = () => {
     .addEventListener('submit', function (e) {
       e.preventDefault();
       if (usernameInput.value) {
-        console.log('rodei')
         window.localStorage.setItem('username', usernameInput.value);
 
-        chat.style.display = "block";
+        form.style.display = "flex";
         login.style.display = "none";
       }
     });
